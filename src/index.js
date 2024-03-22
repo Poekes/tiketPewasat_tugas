@@ -1,17 +1,50 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { useState } from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { ChakraProvider } from "@chakra-ui/react";
+import Coba from "./Coba";
+import About from "./About";
+import "./style.css";
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+function Routees() {
+  const [bill, setBill] = useState({
+    nama: "",
+    tujuan: "",
+    kelas: "",
+    harga: 0,
+    jumlah: 0,
+    diskonStr: "",
+    diskon: 1,
+  });
+  function Home() {
+    return (
+      <>
+        <Coba props={{ bill: bill, setBill: setBill }} />
+      </>
+    );
+  }
+
+  function Bill() {
+    return (
+      <>
+        <About props={{ bill: bill, setBill: setBill }} />
+      </>
+    );
+  }
+
+  return (
+    <Routes>
+      <Route path="/" Component={Home} />
+      <Route path="/bill" Component={Bill} />
+    </Routes>
+  );
+}
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <ChakraProvider>
+    <BrowserRouter>
+      <Routees />
+    </BrowserRouter>
+  </ChakraProvider>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

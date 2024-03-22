@@ -1,0 +1,66 @@
+/* *{
+  padding: 0;
+  margin: 0;
+} */
+/* 
+html{
+  font-family: sans-serif;
+  box-sizing: border-box;
+} */
+/* body{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+/* .container{
+  position: relative;
+  width: 800px  ;
+  margin-top: 120px;
+  z-index: 99;
+} */
+
+.anm{
+  animation: anm .9s forwards;
+  -webkit-animation: anm .9s forwards;
+  opacity: 0;
+}
+@keyframes anm {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.kelas{
+  /* border: 1px solid red; */
+  width: 95%;
+  margin: auto;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.kelas > div{
+  background-color: rgb(6, 128, 176);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 4px 4px 4px   rgba(0, 0, 0, 0.119);
+  margin: 4px;
+  width: 120px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.kelas > div > small{
+  font-size: 9px;
+}
+
