@@ -1,1 +1,1 @@
-## Baru belajar bang
+## React & chakra-ui
